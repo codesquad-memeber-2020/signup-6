@@ -21,4 +21,4 @@ jobs:
           HEROKU_APP_NAME: "codesquad-signup6"
           DEPLOY_BRANCH: "deploy"
           DEPLOY_FOLDER: "BE"
-        run: git push https://heroku:$HEROKU_API_TOKEN@git.heroku.com/$HEROKU_APP_NAME.git `git subtree split --prefix $DEPLOY_FOLDER $DEPLOY_BRANCH`:master --force
+        run: git push https://heroku:$HEROKU_API_TOKEN@git.heroku.com/$HEROKU_APP_NAME.git \`git subtree split --prefix $DEPLOY_FOLDER $DEPLOY_BRANCH\`:master --force
