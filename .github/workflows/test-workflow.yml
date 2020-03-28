@@ -16,7 +16,9 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Build and push
-        run: 
-          COMMIT_NUMBER=$(git subtree split --prefix BE)
-          echo COMMIT_NUMBER
-        
+        env:
+          HEROKU_API_TOKEN: ${{ secrets.HEROKU_API_TOKEN }}
+          HEROKU_APP_NAME: "codesquad-signup6"
+          DEPLOY_BRANCH: "deploy"
+          DEPLOY_FOLDER: "BE"
+        run: git push https://heroku:$HEROKU_API_TOKEN@git.heroku.com/$HEROKU_APP_NAME.git `git subtree split --prefix $DEPLOY_FOLDER $DEPLOY_BRANCH`:master --force
