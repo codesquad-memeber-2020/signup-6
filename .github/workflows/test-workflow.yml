@@ -17,5 +17,5 @@ jobs:
       - uses: actions/checkout@v2
       - name: Build and push
         run: 
-          COMMIT_NUMBER=$(git subtree split --prefix BE deploy)
+          COMMIT_NUMBER=$(git subtree split --prefix BE)
         
