@@ -16,7 +16,6 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Build and push
-        env:
-          COMMIT_TOKEN: ${{ git subtree split --prefix BE deploy }}
-        run: echo $COMMIT_TOKEN
+        run: 
+          COMMIT_NUMBER=$(git subtree split --prefix BE deploy)
         
