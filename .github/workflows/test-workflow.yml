@@ -18,4 +18,5 @@ jobs:
       - name: Build and push
         run: 
           COMMIT_NUMBER=$(git subtree split --prefix BE)
+          echo COMMIT_NUMBER
         
